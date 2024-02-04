@@ -1,0 +1,106 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    /* Light gray background */
+    color: #343a40;
+    /* Dark text color */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navigation Bar styles */
+.navbar {
+    background-color: #007bff;
+    /* Navbar background color */
+}
+
+.navbar-brand {
+    color: #ffffff;
+    /* Navbar brand text color */
+    font-weight: bold;
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff;
+    /* Navbar toggle icon color */
+}
+
+.nav-link {
+    /* color: #ffffff; */
+    color: black;
+    /* Navbar link text color */
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    /* Navbar link text color on hover */
+}
+
+/* Search form styles */
+.form-control {
+    border: 1px solid #ced4da;
+    /* Form control border color */
+}
+
+.btn-outline-success {
+    color: #28a745;
+    /* Button text color */
+    border-color: #28a745;
+    /* Button border color */
+}
+
+/* Cart and Checkout styles */
+.row {
+    margin-top: 20px;
+}
+
+.table {
+    background-color: #ffffff;
+    /* Table background color */
+}
+
+.table th,
+.table td {
+    border: 1px solid #dee2e6;
+    /* Table cell border color */
+}
+
+.table th {
+    background-color: #007bff;
+    /* Table header background color */
+    color: #ffffff;
+    /* Table header text color */
+}
+
+/* Checkout link styles */
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    /* Checkout button background color */
+    color: #ffffff;
+    /* Checkout button text color */
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: #218838;
+    /* Checkout button background color on hover */
+}
+
+/* Make the dropdown menu always visible */
