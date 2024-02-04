@@ -26,13 +26,34 @@ class Product(models.Model):
 
 class ProductImage(models.Model):
     PRDIproduct = models.ForeignKey(Product, on_delete=models.CASCADE,verbose_name=((" product ")))
-    PRDIimage = models.ImageField(upload_to='photos/%y/%m/%d', default='path/to/default/image.jpg')
+    PRDIimage = models.ImageField(upload_to='photos/%y/%m/%d', default='path/to/default/image.jpg',verbose_name=(("Product Image")))
 
     def __str__(self):
-        if self.PRDIproduct and hasattr(self.PRDIproduct, 'name') and self.PRDIproduct.name:
-            return f"{self.PRDIproduct.name} - Image"
-        else:
-            return "Unassociated Image"
+        return str(self.PRDIproduct)
 #   f"{self.product.name} - Image"
 
+# class category
+class Category(models.Model):
+    CATName=models.CharField(max_length=255,verbose_name=(("Category Name")))
+    CATParent=models.ForeignKey('self' ,limit_choices_to={'CATParent__isnull':True},on_delete=models.CASCADE, blank=True, null=True,verbose_name=(("Category")))
+    CATdescription = models.TextField(max_length=50, default='', verbose_name=("Category Description"))
+    CATImg=models.ImageField(upload_to='Category/%y/%m/%d', default='path/to/default/image.jpg',verbose_name=(("Category Image ")))
     
+    
+    def __str__(self):
+        return self.CATName
+    
+class ProductAlternatives(models.Model):
+    PALTproduct=models.ForeignKey(Product, on_delete=models.CASCADE ,related_name="Main_products",verbose_name=(("Product Name")))
+    #PALTAlternatives
+    PALTalternative=models.ManyToManyField(Product ,related_name="Alternative_Product",verbose_name=(("Alternative Product")))
+    
+    def __str__(self) :
+        return str(self.PALTproduct)
+class ProductAccessories(models.Model):
+     PACCproduct=models.ForeignKey(Product, on_delete=models.CASCADE ,related_name="Main_Accessories",verbose_name=(("Accessory Name")))
+    #PALTAlternatives
+     PACCalternative=models.ManyToManyField(Product ,related_name="Accessories_Product",verbose_name=(("Alternative Product")))
+     
+     def __str__(self):
+         return str(self.PACCproduct)
