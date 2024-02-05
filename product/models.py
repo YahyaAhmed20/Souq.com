@@ -5,6 +5,10 @@ from django.utils import timezone
 class Product(models.Model):
     # name default value
     PRDname = models.CharField(max_length=255,verbose_name=(("Product Name")) )
+    #category
+    PRDCategory = models.ForeignKey('Category',on_delete=models.CASCADE,null=True, blank=True,verbose_name=(("Product Category")))
+    #PRDBRAND
+    PRDBrand = models.ForeignKey('settings.Brand', on_delete=models.CASCADE ,null=True, blank=True,verbose_name=(("Product Brand")))
     # description default value
     PRDdescription = models.TextField(max_length=50,verbose_name=("Product Description"))
     # price
