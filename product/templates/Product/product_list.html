@@ -98,7 +98,8 @@
         {% endif %} 
 
                     <div class="card-body">
-                        <h5 class="card-title">{{Product}}</h5>
+                        {% comment %} link belong to single product  {% endcomment %}
+                        <h5 class="card-title"><a href="{% url 'products:product_details' Product.id%}">{{Product}}</a> </h5>
                         <p class="card-text">{{Product.PRDdescription}}</p>
                         <a href="#" class="btn btn-primary">Add To Cart</a>
                     </div>

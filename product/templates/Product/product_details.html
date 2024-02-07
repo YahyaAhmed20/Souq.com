@@ -84,12 +84,14 @@
         <!-- row -->
         <div class="row">
             <div class="col-md-6">
-                <img class="card-img-top" src="{% static 'img/download.svg' %}" alt="Card image cap">
+                {% if product_details.PRDimage %}
+
+                <img class="card-img-top" src="{{product_details.PRDimage.url}}" alt="Card image cap">
+                {% endif %}
             </div>
             <div class="col-md-6">
-                <h1>Product Title</h1>
-                <h4>Product Category</h4>
-                <p>Item Variant</p>
+                <h1>{{product_details.PRDname }}</h1>
+                <h4>{{product_details.PRDCategory}}</h4>
                 <div class="">
                     <form>
                         <div class="form-group">
@@ -103,7 +105,7 @@
             </div>
         </div>
         <div class="row">
-            <p>Product Description</p>
+            <p>{{product_details.PRDdescription}}</p>
         </div>
     </div>
     <hr>
