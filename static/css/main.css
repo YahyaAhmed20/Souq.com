@@ -105,7 +105,13 @@ a:hover {
 
 card-img,
 .card-img-top {
-    max-height: 143px;
+    max-height: 196px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
 }
+
 
 /* Make the dropdown menu always visible */
