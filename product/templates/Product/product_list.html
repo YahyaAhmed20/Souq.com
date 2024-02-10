@@ -4,6 +4,8 @@
 
 {% block body %}
 
+
+
   <!--Main layout-->
   <main class="mt-5">
     <div class="container mynav">
@@ -70,7 +72,7 @@
                   <div class="view overlay">
                     {% if Product.PRDimage %}
                       <img src="{{Product.PRDimage.url}}" class="card-img-top"
-                      alt="" style=height:144px>
+                      alt="" style=height:144px >
                     {% else %}
                       <img class="default-img" src="{% static 'img/default.png' %}" class="card-img-top"
                       alt="">
@@ -90,16 +92,16 @@
                     </a>
                     <h5>
                       <strong>
-                        <a href="{% url 'products:product_details' Product.PRDSlug %}">{{ Product.PRDname }}</a>
+                        <a href="{{get_absolute_url}}">{{ Product.PRDname }}</a>
                       </a>
                         <p>
-                          {% if Product.PRDprice > 0 %}
+                          {% if Product.PRDdiscount > 0 %}
                             <span class="badge green">SALE</span>
                           {% endif %}
-                          {% if Product.PRDprice  %}
+                          {% if Product.PRDisNew  %}
                             <span class="badge blue">NEW</span>
                           {% endif %}
-                          {% if Product.PRDprice  %}
+                          {% if Product.PRDisBestSeller  %}
                           <span class="badge red">Best Seller</span>
                           {% endif %}
                         </p>

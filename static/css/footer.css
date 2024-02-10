@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.footer-section {
+    max-width: 300px;
+}
+
+.footer-section h3 {
+    color: #fff;
+}
+
+.footer-section p {
+    margin: 0;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.icon-link {
+    margin-right: 10px;
+}
+
+/* You can add more styling based on your design preferences */

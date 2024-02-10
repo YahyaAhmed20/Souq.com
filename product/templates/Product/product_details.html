@@ -29,17 +29,17 @@
           <div class="p-4">
 
             <div class="mb-3">
-                {% if product_details.PRDprice > 0 %}
+                {% if product_details.PRDdiscount > 0 %}
                     <a href="">
                       <span class="badge green mr-1">SALE</span>
                     </a>
                   {% endif %}
-                {% if product_details.PRDprice  %}
+                {% if product_details.PRDisNew %}
                   <a href="">
                     <span class="badge blue mr-1">New</span>
                   </a>
                 {% endif %}
-                {% if product_details.PRDprice  %}
+                {% if product_details.PRDisBestSeller  %}
                   <a href="">
                     <span class="badge red mr-1">Bestseller</span>
                   </a>
@@ -48,13 +48,13 @@
 
             <p class="lead font-weight-bold">{{product_details}}</p>
             <p class="lead">
-              {% if product_details.PRDprice > 0 %}
+              {% if product_details.PRDdiscount > 0 %}
                   <span class="mr-1">
                     <del>${{product_details.PRDprice}}</del>
                   </span>
-                  <span>${{product_details.PRDprice}}</span>
+                  <span>${{product_details.PRDdiscount}}</span>
               {% else %}
-                <span>${{product_details.PRDprice}}</span>
+                <span>${{product_details.PRDdiscount}}</span>
               {% endif %}
 
             </p>
