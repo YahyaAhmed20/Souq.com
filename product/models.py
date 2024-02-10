@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-
+from django.utils.text import slugify
 # Create your models here.
 class Product(models.Model):
     # name default value
@@ -17,6 +17,13 @@ class Product(models.Model):
     PRDactive=models.BooleanField(default=True,verbose_name=(("Active")))
     created_at = models.DateTimeField(default=timezone.now, editable=False)
     updated_at = models.DateTimeField(default=timezone.now)
+    PRDSlug=models.SlugField(blank=True,null=True)
+
+
+    def save(self, *args, **kwargs):
+            self.PRDSlug = slugify(self.PRDname)
+            super(Product, self).save(*args, **kwargs)
+
 
     # return name
     def __str__(self):

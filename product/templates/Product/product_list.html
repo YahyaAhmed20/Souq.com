@@ -70,7 +70,7 @@
                   <div class="view overlay">
                     {% if Product.PRDimage %}
                       <img src="{{Product.PRDimage.url}}" class="card-img-top"
-                      alt="">
+                      alt="" style=height:144px>
                     {% else %}
                       <img class="default-img" src="{% static 'img/default.png' %}" class="card-img-top"
                       alt="">
@@ -86,12 +86,12 @@
                   <div class="card-body text-center">
                     <!--Category & Title-->
                     <a href="" class="grey-text">
-                      <h5>{{product.PRDCategory}}</h5>
+                      <h5>{{Product.PRDCategory}}</h5>
                     </a>
                     <h5>
                       <strong>
-                        <a href="{% url 'products:product_details' Product.id %}">{{Product.PRDname}}</a>
-                        </a>
+                        <a href="{% url 'products:product_details' Product.PRDSlug %}">{{ Product.PRDname }}</a>
+                      </a>
                         <p>
                           {% if Product.PRDprice > 0 %}
                             <span class="badge green">SALE</span>
