@@ -15,7 +15,7 @@ def product_list(request):
     context={'product_list':product_list}
     return render(request,'Product/product_list.html',context)
 
-def product_details(request, slug):
+def product_details(request,slug):
     product_details = Product.objects.get(PRDSlug=slug)
     context={'product_details':product_details}
     return render(request,'Product/product_details.html',context)

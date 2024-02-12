@@ -16,7 +16,6 @@ class Product(models.Model):
     PRDprice = models.DecimalField(max_digits=5, decimal_places=2, verbose_name=_("Price"))
     PRDdiscount=models.DecimalField(max_digits=5, decimal_places=2, verbose_name=_("Discount Price"))
     PRDcost = models.DecimalField(max_digits=5, decimal_places=2, verbose_name=_("Cost"))
-
     PRDactive=models.BooleanField(default=True,verbose_name=_(("Active")))
     created_at = models.DateTimeField(default=timezone.now, editable=False)
     updated_at = models.DateTimeField(default=timezone.now)
@@ -31,7 +30,7 @@ class Product(models.Model):
             super(Product, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse("products:product_details", kwargs={"slug": self.PRDSlug})
+        return reverse("products:product_details", kwargs={'slug': self.PRDSlug})
     
     
     
