@@ -5,6 +5,7 @@ from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
 from django_countries.fields import CountryField
 import datetime
+from django.db.models.signals import post_save
 # Create your models here.
 class Profile(models.Model):
     user=models.OneToOneField(User, verbose_name=_('user'),on_delete=models.CASCADE)
@@ -28,4 +29,11 @@ class Profile(models.Model):
         return '%s' %(self.user)
 
     def get_absolute_url(self):
-        return reverse("accounts:Profile_details", kwargs={"slug": self.slug})
+        return reverse("accounts:Profile_detail", kwargs={"slug": self.slug})
+
+    def create_profile(sender,**kwargs):
+        if kwargs['created']:
+            user_profile=Profile.objects.create(user=kwargs['instance'])
+        
+# post save     
+    post_save.connect(create_profile, sender=User)
