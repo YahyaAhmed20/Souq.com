@@ -22,7 +22,20 @@ def signup(request):
     return render(request, 'registration/signup.html', context)
 
 
-def profile(request,slug):
-    profile=get_object_or_404(Profile, slug=slug)
-    context= {"profile":profile}
-    return render (request,"profile.html",context)
+# def profile(request,slug):
+#     profile=get_object_or_404(Profile, slug=slug)
+#     context= {"profile":profile}
+#     return render (request,"profile.html",context)
+
+def my_profile(request):
+    # Your view logic here
+    return render(request, 'my_profile.html')
+
+def edit_profile(request):
+    # Your view logic here
+    return render(request, 'edit_profile.html')
+
+def change_password(request):
+    # Your view logic here
+    return render(request, 'change_password.html')
+

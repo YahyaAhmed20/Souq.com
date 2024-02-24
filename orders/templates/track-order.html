@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block body %}
+<main class="mt-5">
+    <div class="container mynav">
+    
+        <div class="container mt-4">
+            <h2>Track Your Order</h2>
+            <p>Enter your order details to track the status:</p>
+        
+            <form>
+                <div class="mb-3">
+                    <label for="orderNumber" class="form-label">Order Number</label>
+                    <input type="text" class="form-control" id="orderNumber" placeholder="Enter your order number">
+                </div>
+        
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+        
+                <button type="submit" class="btn btn-primary">Search Order</button>
+            </form>
+        
+            <!-- Display order tracking information here -->
+            <div class="mt-4">
+                <!-- This is where you can display the order tracking details once the user submits the form -->
+            </div>
+        </div>
+        
+
+    </div>
+</main>
+{% endblock body %}

@@ -14,6 +14,8 @@ class Profile(models.Model):
     country = models.CharField(max_length=200,  null=True, choices=CountryField().choices + [('', 'Select Country')])
     adress=models.CharField(max_length=200)
     join_data=models.DateTimeField(_('Join data'),default=datetime.datetime.now)
+   
+
 
     def save(self, *args, **kwargs):
             if not self.slug:
@@ -37,3 +39,7 @@ class Profile(models.Model):
         
 # post save     
     post_save.connect(create_profile, sender=User)
+
+
+
+
